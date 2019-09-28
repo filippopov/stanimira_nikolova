@@ -1,58 +1,62 @@
 <?php
 /** @var \StanimiraNikolova\Core\ViewInterface $this */ ;
+/** @var  \StanimiraNikolova\Models\View\Home\HomeViewModel $model */
 $uriJunk = isset($uriJunk) ? $uriJunk : '';
+
 ?>
 
 <!DOCTYPE html>
-<!--[if IE 8]>
 <html lang="en" class="ie8 no-js"> <![endif]-->
-<!--[if IE 9]>
 <html lang="en" class="ie9 no-js"> <![endif]-->
-<!--[if !IE]><!-->
 <html lang="en">
-<!--<![endif]-->
-<!-- BEGIN HEAD -->
+
 <head>
     <meta charset="utf-8"/>
-    <title>FPopov</title>
+    <title>Stanimira Nikolova</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta content="" name="description"/>
     <meta content="" name="author"/>
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo $uriJunk?>src/images/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo $uriJunk?>src/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $uriJunk?>node_modules/font-awesome/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="https://bootswatch.com/yeti/bootstrap.css"/>
-
-<!--    <link rel="stylesheet" type="text/css" href="--><?php //echo $uriJunk?><!--js/bootstrap/bootstrap-3.3.7-dist/css/bootstrap.min.css">-->
-<!--    <link rel="stylesheet" type="text/css" href="http://localhost/new_mvc_php_framework/js/css/font-awesome.css">-->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<?php echo $uriJunk?>js/css/framework.css">
-<!--    <link rel="stylesheet" type="text/css" href="--><?php //echo $uriJunk?><!--js/css/style.css">-->
-
-
-    <script type="text/javascript" src="<?php echo $uriJunk?>/js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="<?php echo $uriJunk?>/js/bootstrap/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="<?php echo $uriJunk?>/js/bootstrap/bootstrap-confirmation/bootstrap-confirmation.min.js"></script>
-    <script type="text/javascript" src="<?php echo $uriJunk?>/js/grid.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Blog</a>
-        </div>
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="<?=$this->uri("categories", "add");?>">Add Categories</a></li>
-                <li><a href="<?=$this->uri("categories", "view");?>">View Categories </a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<input type="checkbox" name="main-nav-toggle" id="main-nav-toggle">
+<header>
+    <label id="toggle" for="main-nav-toggle"><i class="fa fa-bars"></i></label>
+
+    <nav class="main">
+        <ul>
+            <?php foreach ($model->getMenu() as $key => $value) :?>
+                <?php if (is_array($value)) : ?>
+                    <li>
+                        <?php
+
+                            $keyData = array_keys($value);
+                            $keyData = isset($keyData[0]) ? $keyData[0] : '';
+
+                            $valueData = array_values($value);
+                            $valueData = isset($valueData[0]) ? $valueData[0] : [];
+                            $valueData = array_keys($valueData);
+                            $valueData = isset($valueData[0]) ? $valueData[0] : '';
+                        ?>
+                        <a class="<?= ($key === $model->getActive()) ? 'active' : ''?>" href="<?php echo $this->uri('home', 'index', [$key, $valueData])?>"><?=$keyData?></a>
+                        <ul>
+                            <?php foreach ($value[$keyData] as $subKey => $subValue) :?>
+                                <li>
+                                    <a class="<?= ($subKey === $model->getSubActive()) ? 'active' : ''?>" href="<?php echo $this->uri('home', 'index', [$key, $subKey])?>"><?=$subValue?></a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </li>
+                <?php else: ?>
+                    <li><a class="<?= ($key === $model->getActive()) ? 'active' : ''?>" href="<?php echo $this->uri('home', 'index', [$key])?>"><?=$value ?></a></li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </ul>
+    </nav>
+</header>

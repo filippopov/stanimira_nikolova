@@ -19,6 +19,7 @@ class View implements ViewInterface
     const FOOTER_NAME = 'footer';
     const MESSAGE_NAME = 'message';
     const VIEW_EXTENSION = '.php';
+    const SRC = 'src';
 
     private $mvcContext;
 
@@ -46,20 +47,25 @@ class View implements ViewInterface
         }
 
         if (empty($templateName)) {
-            $templateName = $controller . DIRECTORY_SEPARATOR . $action;
+            $templateName = $controller . '/' . $action;
         }
 
         if ($withHeader) {
-            include self::VIEWS_FOLDER
-                . DIRECTORY_SEPARATOR
+            include self::SRC
+                . '/'
+                . self::VIEWS_FOLDER
+                . '/'
                 . self::PARTIALS_FOLDER
-                . DIRECTORY_SEPARATOR
+                . '/'
                 . self::HEADER_NAME
                 . self::VIEW_EXTENSION;
         }
 
         if ($isMessage) {
-            include self::VIEWS_FOLDER
+            include
+                self::SRC
+                . '/'
+                . self::VIEWS_FOLDER
                 . DIRECTORY_SEPARATOR
                 . self::PARTIALS_FOLDER
                 . DIRECTORY_SEPARATOR
@@ -67,13 +73,18 @@ class View implements ViewInterface
                 . self::VIEW_EXTENSION;
         }
 
-        include self::VIEWS_FOLDER
-            . DIRECTORY_SEPARATOR
+        include self::SRC
+            . '/'
+            . self::VIEWS_FOLDER
+            . '/'
             . $templateName
             . self::VIEW_EXTENSION;
 
         if ($withFooter) {
-            include self::VIEWS_FOLDER
+            include
+                self::SRC
+                . '/'
+                . self::VIEWS_FOLDER
                 . DIRECTORY_SEPARATOR
                 . self::PARTIALS_FOLDER
                 . DIRECTORY_SEPARATOR

@@ -1,0 +1,56 @@
+@import url('reset.css');
+@import url('typography.css');
+@import url('layout.css');
+@import url('navigation.css');
+
+body {
+    background: #EEE;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+body > header:first-of-type {
+    border-bottom: 2px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.site-title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 1rem 0 1rem 1rem;
+}
+
+.site-title a {
+    text-decoration: none;
+    color: black;
+}
+
+body header nav,
+body header label{
+    padding: 1rem;
+}
+
+body header label i {
+    font-size: 2rem !important;
+}
+
+body > main {
+    padding: 3rem;
+}
+
+body > footer:last-of-type {
+    margin-top: auto;
+    background: #666;
+    color: #FFF;
+    padding: 1rem 2rem;
+}
+
+body > footer:last-of-type a {
+    text-decoration: none;
+    color: white;
+}

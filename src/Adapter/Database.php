@@ -9,7 +9,7 @@ class Database implements DatabaseInterface
 
     private function __construct($host, $user, $pass, $dbName)
     {
-        $this->pdo = new \PDO("mysql:host=$host;dbname=$dbName", $user, $pass);
+        $this->pdo = new \PDO("mysql:host=$host;dbname=$dbName;charset=utf8", $user, $pass);
     }
 
     public function prepare($statement) : DatabaseStatementInterface
