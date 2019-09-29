@@ -1,5 +1,5 @@
 <footer>
-    <a href="http://philip-popov.eu">&copy; Philip Popov.</a> All rights reserved. <a href="https://github.com/filippopov/stanimira_nikolova">GitHub</a>
+    <a href="http://philip-popov.eu" target="_blank">&copy; Philip Popov.</a> <a href="https://github.com/filippopov/stanimira_nikolova" target="_blank">Project GitHub Repository</a>
 </footer>
 </body>
 </html>

@@ -27,6 +27,8 @@ $uriJunk = isset($uriJunk) ? $uriJunk : '';
 
 <input type="checkbox" name="main-nav-toggle" id="main-nav-toggle">
 <header>
+    <p class="site-title"><a href="<?= $this->uri('home', 'index') ?>">Станимира Николова</a></p>
+
     <label id="toggle" for="main-nav-toggle"><i class="fa fa-bars"></i></label>
 
     <nav class="main">

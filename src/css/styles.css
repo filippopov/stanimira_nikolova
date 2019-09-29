@@ -27,7 +27,8 @@ body > header:first-of-type {
 
 .site-title a {
     text-decoration: none;
-    color: black;
+    color: #060;
+    font-weight: bold;
 }
 
 body header nav,
@@ -41,6 +42,12 @@ body header label i {
 
 body > main {
     padding: 3rem;
+}
+
+body > main section p a {
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
 }
 
 body > footer:last-of-type {
