@@ -16,7 +16,10 @@ class View implements ViewInterface
     const VIEWS_FOLDER = 'views';
     const PARTIALS_FOLDER = 'partials';
     const HEADER_NAME = 'header';
+    const ADMIN_HEADER_NAME = 'adminHeader';
     const FOOTER_NAME = 'footer';
+    const ADMIN_FOOTER_NAME = 'adminFooter';
+    const ADMIN_ASIDE = 'adminAside';
     const MESSAGE_NAME = 'message';
     const VIEW_EXTENSION = '.php';
     const SRC = 'src';
@@ -36,6 +39,9 @@ class View implements ViewInterface
         $withFooter = isset($params['withFooter']) ? $params['withFooter'] : true;
         $isMessage = isset($params['isMessage']) ? $params['isMessage'] : true;
         $isToEscape = isset($params['isEscape']) ? $params['isEscape'] : true;
+        $withAdminHeader = isset($params['withAdminHeader']) ? $params['withAdminHeader'] : false;
+        $withAdminFooter = isset($params['withAdminFooter']) ? $params['withAdminFooter'] : false;
+        $withAdminAside = isset($params['withAdminAside']) ? $params['withAdminAside'] : false;
 
         $controller = $this->mvcContext->getController();
         $action = $this->mvcContext->getAction();
@@ -48,6 +54,28 @@ class View implements ViewInterface
 
         if (empty($templateName)) {
             $templateName = $controller . '/' . $action;
+        }
+
+        if ($withAdminHeader){
+            include self::SRC
+                . '/'
+                . self::VIEWS_FOLDER
+                . '/'
+                . self::PARTIALS_FOLDER
+                . '/'
+                . self::ADMIN_HEADER_NAME
+                . self::VIEW_EXTENSION;
+        }
+
+        if ($withAdminAside){
+            include self::SRC
+                . '/'
+                . self::VIEWS_FOLDER
+                . '/'
+                . self::PARTIALS_FOLDER
+                . '/'
+                . self::ADMIN_ASIDE
+                . self::VIEW_EXTENSION;
         }
 
         if ($withHeader) {
@@ -89,6 +117,18 @@ class View implements ViewInterface
                 . self::PARTIALS_FOLDER
                 . DIRECTORY_SEPARATOR
                 . self::FOOTER_NAME
+                . self::VIEW_EXTENSION;
+        }
+
+        if ($withAdminFooter) {
+            include
+                self::SRC
+                . '/'
+                . self::VIEWS_FOLDER
+                . DIRECTORY_SEPARATOR
+                . self::PARTIALS_FOLDER
+                . DIRECTORY_SEPARATOR
+                . self::ADMIN_FOOTER_NAME
                 . self::VIEW_EXTENSION;
         }
     }

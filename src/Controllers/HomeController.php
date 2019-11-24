@@ -43,6 +43,7 @@ class HomeController
         $menu = $this->menuService->getMenu();
 
         $params = [
+            'isMessage' => false,
             'model' => new HomeViewModel($menu, $pageData, $page, $subPage),
             'isEscape' => false
         ];
