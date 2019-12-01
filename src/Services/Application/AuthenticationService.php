@@ -65,6 +65,7 @@ class AuthenticationService extends AbstractService implements AuthenticationSer
             $this->session->set('id', $user->getId());
             return true;
         }
+
         Message::postMessage('Please enter valid password', Message::NEGATIVE_MESSAGE);
         return false;
     }

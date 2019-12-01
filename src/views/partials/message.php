@@ -1,4 +1,4 @@
-<div class="container">
+<div class="message">
         <?php foreach (\StanimiraNikolova\Core\MVC\Message::returnMessages() AS $value) : ?>
             <?php if ($value->type == \StanimiraNikolova\Core\MVC\Message::POSITIVE_MESSAGE) :?>
                 <div class="alert alert-dismissible alert-success">
@@ -16,5 +16,3 @@
             <?php endif; ?>
         <?php endforeach;?>
 </div>
-
-

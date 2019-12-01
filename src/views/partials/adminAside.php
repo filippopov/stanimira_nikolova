@@ -1,7 +1,7 @@
 <header class="main-header">
     <a href="#/homePage" class="logo">
-        <span class="logo-mini"><b>W</b>A</span>
-        <span class="logo-lg"><b>Watch</b>App</span>
+        <span class="logo-mini"><b>S</b>N</span>
+        <span class="logo-lg"><b>Stanimira</b>Nikolova</span>
     </a>
     <nav class="navbar navbar-static-top">
         <a href="#/homePage" class="sidebar-toggle" data-toggle="push-menu" role="button">
@@ -21,19 +21,9 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active"><a href="#/homePage"><i class="fa fa-circle-o"></i>My Watch Collection</a></li>
-                    <li class="active"><a href="#/addWatch"><i class="fa fa-circle-o"></i>Add Watch</a></li>
-                </ul>
-            </li>
-            <li class="active treeview">
-                <a href="#/rotationCalendar">
-                    <i class="fa fa-calendar"></i> <span>Watch Rotation</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li class="active"><a href="#/rotationCalendar"><i class="fa fa-circle-o"></i>Watch Rotation Calendar</a></li>
+                    <li class="active"><a href="#/homePage"><i class="fa fa-circle-o"></i>Menu</a></li>
+                    <li class="active"><a href="#/addWatch"><i class="fa fa-circle-o"></i>Page</a></li>
+                    <li class="active"><a href="#/addWatch"><i class="fa fa-circle-o"></i>Users</a></li>
                 </ul>
             </li>
             <li><a href="#/logout"><i class="fa fa-circle-o text-red"></i> <span>Logout</span></a></li>

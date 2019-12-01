@@ -89,17 +89,17 @@ class View implements ViewInterface
                 . self::VIEW_EXTENSION;
         }
 
-        if ($isMessage) {
-            include
-                self::SRC
-                . '/'
-                . self::VIEWS_FOLDER
-                . DIRECTORY_SEPARATOR
-                . self::PARTIALS_FOLDER
-                . DIRECTORY_SEPARATOR
-                . self::MESSAGE_NAME
-                . self::VIEW_EXTENSION;
-        }
+//        if ($isMessage) {
+//            include
+//                self::SRC
+//                . '/'
+//                . self::VIEWS_FOLDER
+//                . DIRECTORY_SEPARATOR
+//                . self::PARTIALS_FOLDER
+//                . DIRECTORY_SEPARATOR
+//                . self::MESSAGE_NAME
+//                . self::VIEW_EXTENSION;
+//        }
 
         include self::SRC
             . '/'

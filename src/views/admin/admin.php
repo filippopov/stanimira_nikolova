@@ -5,7 +5,9 @@
     </section>
     <!-- Main content -->
     <section class="content">
-
+        <?php
+            include 'src/views/partials/message.php';
+        ?>
         <div class="row">
 
         </div>
