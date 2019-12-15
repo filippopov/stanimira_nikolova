@@ -20,6 +20,7 @@ $bodyClass = isset($bodyClass) ? $bodyClass : '';
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic">
     <link rel="stylesheet" href="<?=$uriJunk?>src/css/login-form.css">
     <link rel="stylesheet" href="<?=$uriJunk?>src/js/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $uriJunk?>src/css/table.css">
     <script src="<?=$uriJunk?>node_modules/jquery/dist/jquery.min.js"></script>
     <script src="<?=$uriJunk?>src/js/jquery-ui.min.js"></script>
     <script src="<?=$uriJunk?>node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

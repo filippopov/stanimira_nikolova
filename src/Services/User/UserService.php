@@ -89,4 +89,9 @@ class UserService extends AbstractService  implements UserServiceInterface
 
         return $this->userRepository->update($bindingModel->getId(), $params);
     }
+
+    public function getUsers(): array
+    {
+        return $this->userRepository->findAll();
+    }
 }

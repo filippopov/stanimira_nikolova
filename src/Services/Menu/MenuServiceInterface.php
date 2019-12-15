@@ -12,4 +12,6 @@ namespace StanimiraNikolova\Services\Menu;
 interface MenuServiceInterface
 {
     public function getMenu() : array;
+
+    public function getMenuItems(): array;
 }

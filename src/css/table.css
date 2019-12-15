@@ -1,0 +1,89 @@
+/*@import url(reset.css);*/
+/*@import url(typography.css);*/
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    margin: 3rem;
+    border: 1px solid #CCC;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+table td, table th {
+    border: 1px solid #CCC;
+    padding: 0.3rem 0.5rem;
+}
+
+table thead th {
+    text-align: left;
+    background: #CCC;
+}
+
+table tr:nth-child(odd) td {
+    background: #F1F1F1;
+}
+
+table tr:hover td {
+    background: black;
+    color: #FFF;
+    border-color: transparent;
+}
+
+
+@media screen and (max-width: 1000px){
+    table thead {
+        display: none;
+    }
+
+    table,
+    table tbody,
+    table tr, table td{
+        display: block;
+    }
+
+    table tr {
+        border: 2px solid black;
+    }
+
+    table tbody td:before {
+        display: inline-block;
+        width: 8rem;
+        font-weight: bold;
+        text-align: right;
+        padding-right: 1rem;
+        white-space: nowrap;
+    }
+
+    table tbody td:nth-child(1):before {
+        content: attr(data-label);
+    }
+
+    table tbody td:nth-child(2):before {
+        content: attr(data-label);
+    }
+
+    table tbody td:nth-child(3):before {
+        content: attr(data-label);
+    }
+
+    table tbody td:nth-child(4):before {
+        content: attr(data-label);
+    }
+
+    table tbody td:nth-child(5):before {
+        content: attr(data-label);
+    }
+
+    table tbody td:nth-child(6):before {
+        content: attr(data-label);
+    }
+
+    table tbody td:nth-child(7):before {
+        content: attr(data-label);
+    }
+
+    table tbody td:nth-child(8):before {
+        content: attr(data-label);
+    }
+}

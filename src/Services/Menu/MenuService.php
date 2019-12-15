@@ -60,4 +60,9 @@ class MenuService extends AbstractService implements MenuServiceInterface
 
         return $menu;
     }
+
+    public function getMenuItems(): array
+    {
+        return $this->menuRepository->findAll();
+    }
 }
